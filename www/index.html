@@ -12,6 +12,27 @@
             app.initialize();
         </script>
         <script type="text/javascript">
+        document.addEventListener('deviceready', deviceready, false);
+
+            function deviceready() {
+
+                document.querySelector("#jsAlert").addEventListener("touchstart", function() {
+                    alert("JavaScript Alert");
+                }, false);
+
+                document.querySelector("#nAlert").addEventListener("touchstart", function() {
+                    navigator.notification.alert("Native Alert", null, "Custom Title", "Custom Button");
+                }, false);
+
+                document.querySelector("#nConfirm").addEventListener("touchstart", function() {
+                    navigator.notification.confirm("This is a Native Confirm?", null, "Custom Title", "Bad,Good");
+                }, false);
+
+                document.querySelector("#nPrompt").addEventListener("touchstart", function() {
+                    navigator.notification.prompt("Answer this Native Prompt", null, "Custom Title",["NO!","OK"]);
+                }, false);
+
+            }
             function ShowAlerta1(){
                      navigator.notification.alert('Ganaste!',null,'Game Over','Done');
             }
@@ -30,6 +51,13 @@
             <br><br><input type="button" value="Mostrar Alerta p1" onclick="ShowAlerta1();">
             <br><br><input type="button" value="Mostrar Alerta p2" onclick="ShowAlerta2();">
             <br><br><input type="button" value="Mostrar Alerta p3" onclick="ShowAlerta3();">
+
+            <button id="jsAlert">JS Alert</button>
+
+            <button id="nAlert">Native Alert</button>
+            <button id="nConfirm">Native Confirm</button>
+            <button id="nPrompt">Native Prompt</button>
+
         </div>
        
     </body>
