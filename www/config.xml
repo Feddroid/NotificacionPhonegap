@@ -50,5 +50,8 @@
     <gap:config-file platform="android" parent="/manifest">
         <application android:theme="@android:style/Theme.NoTitleBar"></application>
     </gap:config-file>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification"/>
+    </feature>
     <access origin="*" />
 </widget>
